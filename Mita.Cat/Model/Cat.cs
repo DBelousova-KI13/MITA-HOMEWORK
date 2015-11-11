@@ -12,9 +12,8 @@ namespace Model
         private readonly string _age;
         private int _health;
 
-        public Cat(string name, string age, int health, CatColor color)
+        public Cat(string age, int health, CatColor color)
         {
-            _name = name;
             _age = age;
             _health = health;
             Color = color;
@@ -40,16 +39,19 @@ namespace Model
 
         public CatColor Color { get; set; }
 
-        public void ChangeColor(CatColor color)
-        {
-            Color = color;
-        }
 
-
-        public bool IsCatHealthy()
+        public string CurrentColor(CatColor color)
         {
-            bool isHealthy = !(_health < 5);
-            return isHealthy;
+
+                if (_health < 5)
+                {
+                    return color.SickColor;
+                }
+                else
+                {
+                    return color.HealtyColor;
+                }
+   
         }
 
         public void Feed()
@@ -65,6 +67,7 @@ namespace Model
 
     public class CatColor
     {
+
         public string HealtyColor { get; set; }
 
         public string SickColor { get; set; }
