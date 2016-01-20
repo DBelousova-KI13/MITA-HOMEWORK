@@ -42,7 +42,7 @@ namespace Mita.Cat
             Console.WriteLine("Возраст кошки: ");
             Console.WriteLine(cat.Age);
             Console.WriteLine("Текущий цвет кошки");
-            Console.WriteLine(cat.CurrentColor(color));
+            Console.WriteLine(cat.CurrentColor);
         }
 
         static void Main(string[] args)

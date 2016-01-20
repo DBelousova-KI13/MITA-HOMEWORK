@@ -40,18 +40,20 @@ namespace Model
         public CatColor Color { get; set; }
 
 
-        public string CurrentColor(CatColor color)
+        public string CurrentColor
         {
-
+            get
+            {
                 if (_health < 5)
                 {
-                    return color.SickColor;
+                    return Color.SickColor;
                 }
                 else
                 {
-                    return color.HealtyColor;
+                    return Color.HealtyColor;
                 }
-   
+            }
+
         }
 
         public void Feed()
